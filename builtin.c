@@ -78,24 +78,6 @@ void handle_exit(char **command, char **argv, int *status, int idx)
 	}
 	arrayfree(command);
 	exit(exit_value);
-}
 
-/**
- * print_env - a function that display enviroments
- * @command: command
- * @status: status
- * Return: Returns enviroment variables
- */
-void print_env(char **command, int *status)
-{
-	int i;
-	(void) status;
-
-	for (i = 0; environ[i]; i++)
-	{
-		write(STDOUT_FILENO, environ[i], strlen(environ[i]));
-		write(STDOUT_FILENO, "\n", 1);
-	}
-	arrayfree(command);
 	(*status) = 0;
 }
