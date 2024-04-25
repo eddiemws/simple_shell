@@ -32,7 +32,15 @@ int check_builtin(char *command)
  * Return: returns nothing
  */
 void handle_builtin(char **command, char **argv, int *status, int idx)
+{
+	(void) argv;
+	(void) idx;
 
+	if (strcmp(command[0], "exit") == 0)
+		handle_exit(command, argv, status, idx);
+	else if (strcmp(command[0], "env") == 0)
+		print_env(command, status);
+}
 
 /**
  * handle_exit - a function handling exit
