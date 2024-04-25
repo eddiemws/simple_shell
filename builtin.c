@@ -1,4 +1,27 @@
+#include "main.h"
 
+/**
+ * check_builtin - Entry point to program
+ * @command: command is to be checked
+ * Return: Returns 0 for success, 1 for fauiler
+ */
+int check_builtin(char *command)
+{
+	int i = 0;
+	char *buitins[] = {
+		"exit", "env", "setenv", "cd", NULL
+	};
+
+	while (buitins[i])
+	{
+		if (strcmp(command, buitins[i]) == 0)
+		{
+			return (1);
+		}
+		i++;
+	}
+	return (0);
+}
 
 /**
  * handle_builtin - a function that handle builtin
