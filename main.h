@@ -39,7 +39,12 @@ void displayerror(char *name, char *cmd, int idx);
 
 /****** BUILTIN AND EXECUTE ******/
 
-
+int myexecute(char **command, char **argv, int idx);
+int check_builtin(char *command);
+void handle_builtin(char **command, char **argv, int *status, int idx);
+void handle_exit(char **command, char **argv, int *status,  int idx);
+void print_env(char **command, int *status);
+void exit_shell(char **command, char **argv, int *status, int idx);
 
 /******** STRING FUNCTIONS **********/
 
